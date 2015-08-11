@@ -1,0 +1,2 @@
+- include: check_vars.yml tags=datadog-agent,datadog,check
+- include: datadog-agent.yml tags=datadog,datadog-agent

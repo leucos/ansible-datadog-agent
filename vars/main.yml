@@ -1,0 +1,2 @@
+datadog_agent_apt_key: C7A7DA52
+datadog_agent_apt_repository: 'deb http://apt.datadoghq.com/ stable main'

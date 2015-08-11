@@ -1,0 +1,21 @@
+- name: Adds apt-key
+  apt_key:
+    id: "{{ datadog_agent_apt_key }}"
+    keyserver: keyserver.ubuntu.com
+
+- name: Installs repository
+  apt_repository:
+    repo: "{{ datadog_agent_apt_repository }}"
+
+- name: Installs agent
+  apt:
+    pkg: datadog-agent
+    state: latest
+    update_cache: yes
+  notify: Start datadog-agent
+
+- name: Configures agent
+  template:
+    src: datadog.conf.j2
+    dest: /etc/dd-agent/datadog.conf
+  notify: Restart datadog-agent

@@ -1,2 +1,5 @@
+# By default, we disable datadog
+datadog_enabled: false
+
 datadog_agent_api_key: false
 datadog_host_tags_prefix: false

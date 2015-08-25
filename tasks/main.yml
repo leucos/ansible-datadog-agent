@@ -1,2 +1,4 @@
 - include: check_vars.yml tags=datadog-agent,datadog,check
+  when: datadog_enabled
 - include: datadog-agent.yml tags=datadog,datadog-agent
+  when: datadog_enabled

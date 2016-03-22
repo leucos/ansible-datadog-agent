@@ -81,7 +81,13 @@ use_mount: no
 
 # The loopback address the Forwarder and Dogstatsd will bind.
 # Optional, it is mainly used when running the agent on Openshift
+{% if datadog_bind_interface %}
+bind_host: {{ hostvars[inventory_hostname]['ansible_' + datadog_bind_interface]['ipv4']['address'] }}
+{% elif datadog_bind_address %}
+bind_host: {{ datadog_bind_address }}
+{% else %}
 # bind_host: localhost
+{% endif %}
 
 # If enabled the collector will capture a metric for check run times.
 # check_timings: no

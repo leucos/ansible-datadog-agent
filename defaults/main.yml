@@ -3,3 +3,6 @@ datadog_enabled: false
 
 datadog_agent_api_key: false
 datadog_host_tags_prefix: false
+
+datadog_bind_interface: false
+datadog_bind_address: false
